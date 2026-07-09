@@ -287,6 +287,10 @@
     display:flex; align-items:center; justify-content:center;
     margin-bottom:18px;
   }
+  .course-icon img{
+    width:24px; height:24px;
+    object-fit:contain;
+  }
   .course-card h3{
     font-size:18px;
     margin-bottom:8px;
@@ -625,6 +629,15 @@
     opacity:0.6;
     margin-top:10px;
   }
+  .footer-credit-collapse summary{
+    cursor:pointer;
+    list-style:none;
+  }
+  .footer-credit-collapse summary::-webkit-details-marker{display:none;}
+  .footer-credit-collapse summary::before{content:"+ "; color:var(--accent);}
+  .footer-credit-collapse[open] summary::before{content:"– ";}
+  .footer-credit-collapse p{margin-top:6px;}
+  .footer-credit-collapse a{text-decoration:underline;}
   .footer-credit a{text-decoration:underline;}
 
   /* ---------- FLOATING BUTTONS ---------- */
