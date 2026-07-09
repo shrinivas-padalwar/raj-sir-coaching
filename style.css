@@ -315,9 +315,13 @@
   }
   .why-card{text-align:center;}
   .why-illo{
-    width:96px; height:96px;
-    margin:0 auto 20px;
+    width:170px; height:170px;
+    margin:0 auto 12px;
     display:flex; align-items:center; justify-content:center;
+  }
+  .why-illo img{
+    width:100%; height:100%;
+    object-fit:contain;
   }
   .why-card h3{
     font-size:16.5px;
@@ -434,6 +438,10 @@
     background:rgba(255,255,255,0.05);
   }
   .field textarea{resize:vertical; min-height:90px;}
+  .field select option{
+    color:#111;
+    background:#fff;
+  }
   .form-submit{width:100%; padding:15px; font-size:15.5px; margin-top:6px;}
   .form-note{font-size:12px; color:var(--text2); margin-top:12px; text-align:center;}
 
@@ -575,7 +583,7 @@
 
   /* ---------- FOOTER ---------- */
   footer{
-    padding:48px 0 32px;
+    padding:48px 0 160px;
     border-top:1px solid var(--line);
   }
   .footer-grid{
@@ -588,14 +596,18 @@
   }
   .footer-social{display:flex; gap:12px;}
   .footer-social a{
-    width:38px; height:38px;
+    width:40px; height:40px;
     border-radius:50%;
-    border:1px solid var(--line);
+    border:1px solid var(--line-hi);
+    background:rgba(110,243,197,0.08);
     display:flex; align-items:center; justify-content:center;
-    color:var(--text2);
-    transition:border-color .18s ease, color .18s ease;
+    color:var(--accent);
+    transition:border-color .18s ease, color .18s ease, background .18s ease, transform .18s ease;
   }
-  .footer-social a:hover{border-color:var(--accent); color:var(--accent);}
+  .footer-social a:hover{transform:translateY(-2px);}
+  .footer-social a[aria-label="WhatsApp"]:hover{background:#25D366; border-color:#25D366; color:#062F14;}
+  .footer-social a[aria-label="Facebook"]:hover{background:#1877F2; border-color:#1877F2; color:#fff;}
+  .footer-social a[aria-label="Instagram"]:hover{background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF); border-color:#DD2A7B; color:#fff;}
   .footer-bottom{
     font-size:12.5px;
     color:var(--text2);
@@ -604,6 +616,13 @@
     flex-wrap:wrap;
     gap:10px;
   }
+  .footer-credit{
+    font-size:11px;
+    color:var(--text2);
+    opacity:0.6;
+    margin-top:10px;
+  }
+  .footer-credit a{text-decoration:underline;}
 
   /* ---------- FLOATING BUTTONS ---------- */
   .floating-btns{
@@ -639,10 +658,10 @@
     .inquiry-grid{grid-template-columns:1fr;}
     .form-row{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr;}
-    .faculty-card{grid-template-columns:1fr; text-align:center;}
-    .faculty-photo{margin:0 auto;}
-    .highlight-inner{grid-template-columns:1fr; text-align:center;}
-    .highlight-photo{margin:0 auto;}
+    .faculty-card{grid-template-columns:1fr;}
+    .faculty-photo{margin-bottom:20px;}
+    .highlight-inner{grid-template-columns:1fr;}
+    .highlight-photo{margin-bottom:20px;}
   }
   @media (max-width:560px){
     .course-grid{grid-template-columns:1fr;}
