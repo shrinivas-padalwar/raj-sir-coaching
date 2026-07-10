@@ -311,6 +311,31 @@
   }
 
   /* ---------- WHY US ---------- */
+  /* ---------- NUMBERS ---------- */
+  .numbers{
+    padding:56px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .numbers-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+  }
+  .number-tile{text-align:center;}
+  .number-tile .num{
+    font-family:var(--mono);
+    font-size:clamp(28px,4vw,40px);
+    font-weight:700;
+    color:var(--accent);
+    line-height:1;
+    margin-bottom:10px;
+  }
+  .number-tile .lbl{
+    font-size:13px;
+    color:var(--text2);
+  }
+
   .why-us{padding:110px 0; background:var(--card);}
   .why-grid{
     display:grid;
@@ -338,24 +363,30 @@
 
   /* ---------- FACULTY ---------- */
   .faculty{padding:110px 0;}
-  .faculty-card{
+  .faculty-grid{
     display:grid;
-    grid-template-columns:180px 1fr;
-    gap:32px;
-    align-items:center;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  .faculty-card{
     background:rgba(23,26,34,0.6);
     border:1px solid var(--line);
     border-radius:var(--radius);
-    padding:32px;
-    max-width:760px;
+    padding:28px;
+    text-align:center;
   }
   .faculty-photo{
-    width:180px; height:180px;
+    width:140px; height:140px;
+    margin:0 auto 20px;
     border-radius:var(--radius);
     overflow:hidden;
     border:1px solid var(--line);
   }
-  .faculty-info h3{font-size:22px; margin-bottom:6px;}
+  .faculty-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+  .faculty-info h3{font-size:19px; margin-bottom:6px;}
   .faculty-qual{
     font-family:var(--mono);
     font-size:13px;
@@ -363,6 +394,14 @@
     margin-bottom:14px;
   }
   .faculty-info p{font-size:14.5px; color:var(--text2);}
+
+  /* ---------- INTRO VIDEO ---------- */
+  .intro-video{padding:90px 0; background:var(--card);}
+  .video-embed-wrap{
+    display:flex;
+    justify-content:center;
+  }
+  .video-embed-wrap iframe{max-width:100%;}
 
   /* ---------- ACHIEVEMENT HIGHLIGHT ---------- */
   .highlight{padding:90px 0; background:var(--card);}
@@ -380,6 +419,30 @@
   }
   .highlight-text h2{font-size:clamp(24px,3.2vw,32px); margin-bottom:12px;}
   .highlight-text p{color:var(--text2); font-size:15.5px; max-width:580px;}
+
+  /* ---------- RECENT RESULTS ---------- */
+  .results-strip{padding:80px 0;}
+  .results-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .result-chip{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:rgba(23,26,34,0.6);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:12px 20px;
+  }
+  .result-chip .rn{font-size:14px; color:var(--text2);}
+  .result-chip .rm{
+    font-family:var(--mono);
+    font-weight:700;
+    color:var(--accent);
+    font-size:14.5px;
+  }
 
   /* ---------- INQUIRY FORM ---------- */
   .inquiry{padding:110px 0; background:var(--card);}
@@ -667,6 +730,7 @@
     .nav-links{display:none;}
     .menu-toggle{display:block;}
     .trust-grid{grid-template-columns:repeat(2,1fr);}
+    .numbers-grid{grid-template-columns:repeat(2,1fr); gap:24px 16px;}
     .trust-item:nth-child(2){border-right:none;}
     .trust-item{border-bottom:1px solid var(--line); padding:14px;}
     .course-grid{grid-template-columns:repeat(2,1fr);}
@@ -674,8 +738,7 @@
     .inquiry-grid{grid-template-columns:1fr;}
     .form-row{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr;}
-    .faculty-card{grid-template-columns:1fr;}
-    .faculty-photo{margin-bottom:20px;}
+    .faculty-grid{grid-template-columns:1fr;}
     .highlight-inner{grid-template-columns:1fr;}
     .highlight-photo{margin-bottom:20px;}
   }

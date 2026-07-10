@@ -35,7 +35,7 @@ Class: ${studentClass}
 Interested in: ${subject}
 Message: ${message || '-'}`;
 
-  // TODO: confirm which number should receive inquiries (7620787664 vs 9405910910)
-  const url = `https://wa.me/917620787664?text=${encodeURIComponent(text)}`;
+  
+  const url = `https://wa.me/919405910910?text=${encodeURIComponent(text)}`;
   window.open(url, '_blank');
 });
