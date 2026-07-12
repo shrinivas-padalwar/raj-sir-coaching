@@ -15,6 +15,31 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   });
 });
 
+// Logo video click: open enlarged lightbox
+const logoModal = document.getElementById('logoModal');
+const logoModalClose = document.getElementById('logoModalClose');
+document.querySelectorAll('.logo-video-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    if(logoModal) logoModal.classList.add('active');
+  });
+});
+if(logoModalClose){
+  logoModalClose.addEventListener('click', ()=> logoModal.classList.remove('active'));
+}
+if(logoModal){
+  logoModal.addEventListener('click', (e)=>{
+    if(e.target === logoModal) logoModal.classList.remove('active');
+  });
+}
+
+// Logo text click: go to homepage (scroll to top)
+document.querySelectorAll('.logo-text-link').forEach(link=>{
+  link.addEventListener('click', (e)=>{
+    e.preventDefault();
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+
 // Restart hero burst animation on tap/click — gather to center first, then re-burst
 const heroStage = document.querySelector('.hero-stage');
 if(heroStage){
@@ -78,8 +103,9 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e){
   const studentName = f.studentName.value.trim();
   const parentName = f.parentName.value.trim();
   const mobile = f.mobile.value.trim();
-  const studentClass = f.studentClass.value;
-  const subject = f.subject.value;
+  const studentClass = f.querySelector('input[name="studentClass"]:checked')?.value || '';
+  const subjects = Array.from(f.querySelectorAll('input[name="subject"]:checked')).map(el => el.value);
+  const subject = subjects.length ? subjects.join(', ') : '-';
   const message = f.message.value.trim();
 
   const text =
