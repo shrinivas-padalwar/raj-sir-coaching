@@ -78,6 +78,19 @@ if(heroStage){
   });
 }
 
+// Reviews show more/less toggle
+const reviewsToggle = document.getElementById('reviewsToggle');
+const reviewTrack = document.querySelector('.review-track');
+if(reviewsToggle && reviewTrack){
+  reviewsToggle.addEventListener('click', ()=>{
+    const isExpanded = reviewTrack.classList.toggle('expanded');
+    reviewsToggle.textContent = isExpanded ? 'See less reviews' : 'See more reviews';
+    if(!isExpanded){
+      reviewTrack.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+}
+
 // Mobile nav toggle
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
